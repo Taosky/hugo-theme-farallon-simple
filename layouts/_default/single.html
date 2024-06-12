@@ -101,6 +101,9 @@
         {{ partial "commentlist.html" . }}
         {{ end }}
     </article>
+    {{ if (findRE "<code" .Content 1) }}
+    <script src="{{"/js/clipboard.js" | relURL}}"></script>
+    {{ end }}
     <!-- {{ if or .PrevPage .NextPage }}
     <nav class="navigation post-navigation is-active">
         <div class="nav-links">
