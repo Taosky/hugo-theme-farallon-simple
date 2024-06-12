@@ -14,6 +14,13 @@
 
     --farallon-border-color: rgba(0, 0, 0, 0.1);
     --farallon-border-color-light: rgba(0, 0, 0, 0.05);
+
+    --farallon-code-background: rgba(245, 245, 245, 1);
+
+    --farallon-db-background:linear-gradient(
+        89.99999999999999deg,
+        rgba(255, 233, 244, 0.3) 0%,
+        rgba(234, 243, 255, 0.5) 100%)
 }
 
 @media (prefers-color-scheme: dark) {
@@ -33,6 +40,10 @@
 
         --farallon-border-color: rgba(63, 63, 70, 0.6);
         --farallon-border-color-light: rgba(63, 63, 70, 0.4);
+
+        --farallon-code-background: #303033;
+
+        --farallon-db-background:rgba(63, 63, 70, 0.15);
 
         .site--header__center {
             background-color: rgba(39, 39, 42, 0.9);
@@ -135,6 +146,10 @@
 
     --farallon-border-color: rgba(63, 63, 70, 0.6);
     --farallon-border-color-light: rgba(63, 63, 70, 0.4);
+
+    --farallon-code-background: #303033;
+
+    --farallon-db-background:rgba(63, 63, 70, 0.15);
 
     .site--header__center {
         background-color: rgba(39, 39, 42, 0.9);
