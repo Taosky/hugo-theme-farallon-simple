@@ -28,5 +28,8 @@
 {{ if $.Site.Params.googleAd }}
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ $.Site.Params.googleAd }}"
      crossorigin="anonymous"></script>
+{{ else if .Site.Params.googleAd }}
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ .Site.Params.googleAd }}"
+     crossorigin="anonymous"></script>
 {{ end }}
 {{ end }}
