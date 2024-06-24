@@ -16,11 +16,11 @@ theme = 'farallon'
     url="/tags/"
     weight="4"
     [[languages.zh-cn.menu.main]]
-    name="文章"
-    url="/story/"
-    weight="2"
+    name="看过"
+    url="/watch/"
+    weight="3"
     [[languages.zh-cn.menu.main]]
-    name="首页"
+    name="文章"
     url="/"
     weight="1"
 
@@ -36,9 +36,7 @@ theme = 'farallon'
   toc = true
   mainSections = ['story','memo']
   indexName = 'taosky'
-  searchKey = 'XXXXX'
-  searchAPPID = 'PXXXXXXXXXXJ'
-  showAuthor = true
+  showAuthor = false
   authorName = 'Taosky'
   authorDescription = ''
   authorAvatar = '/images/logo.jpeg'
@@ -47,9 +45,13 @@ theme = 'farallon'
   post_like = true
   post_view = true
   actionDomain = 'https://v.wpista.com/'
+  giscusRepo = 'Taosky/taosky.github.io'
+  giscusRepoId = 'xxxxxxxxxxxxxxxxx='
+  giscusCategory = 'Announcements'
+  giscusCategoryId = 'DIC_xxxxxxxxxx'
 
 [outputs]
-  home = [ "HTML","RSS"]
+  home = [ "HTML","RSS","JSON"]
   page = ["HTML"]
 
 [markup]
