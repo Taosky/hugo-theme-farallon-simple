@@ -64,3 +64,16 @@
 <script src="{{ $.Site.BaseURL }}{{ . }}"></script>
 {{ end }}
 {{ end }}
+
+
+<!-- <a id="search-btn" style="display: inline-block;" href="javascript:void(0);">
+    <span class="icon-search">捜</span>
+</a> -->
+
+<div id="fastSearch" class="replace-header">
+    <input id="searchInput" tabindex="0" placeholder="Search here ...">
+    <ul id="searchResults">
+    </ul>
+</div>
+<script src="/js/fuse.min.js"></script>
+<script src="/js/fastsearch.js"></script>

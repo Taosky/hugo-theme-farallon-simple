@@ -23,18 +23,18 @@ class farallonBase extends farallonHelper {
         this.initCopyright();
         this.initThemeSwitch();
         this.initBack2Top();
-        this.initSearch();
+        // this.initSearch();
     }
 
-    initSearch() {
-        document
-            .querySelector('[data-action="show-search"]')!
-            .addEventListener("click", () => {
-                document
-                    .querySelector(".site--header__center .inner")!
-                    .classList.toggle("search--active");
-            });
-    }
+    // initSearch() {
+    //     document
+    //         .querySelector('[data-action="show-search"]')!
+    //         .addEventListener("click", () => {
+    //             document
+    //                 .querySelector(".site--header__center .inner")!
+    //                 .classList.toggle("search--active");
+    //         });
+    // }
 
     initBack2Top() {
         if (document.querySelector(".backToTop")) {
