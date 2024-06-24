@@ -1,0 +1,57 @@
+baseURL = 'https://taosky.org'
+languageCode = 'zh-cn'
+timezone = 'Asia/Shanghai'
+defaultContentLanguage = 'zh-cn'
+theme = 'farallon'
+
+
+[langusges]
+[languages.zh-cn]
+  title = "Taosky 的博客"
+  languageName = "简体中文"
+  contentDir = 'content/zh-cn'
+  [languages.zh-cn.menu]
+    [[languages.zh-cn.menu.main]]
+    name="标签"
+    url="/tags/"
+    weight="4"
+    [[languages.zh-cn.menu.main]]
+    name="文章"
+    url="/story/"
+    weight="2"
+    [[languages.zh-cn.menu.main]]
+    name="首页"
+    url="/"
+    weight="1"
+
+    
+
+[taxonomies]
+  category = 'categories'
+  tag = 'tags'
+
+[Params]
+  search= true
+  description = '个人博客'
+  toc = true
+  mainSections = ['story','memo']
+  indexName = 'taosky'
+  searchKey = 'XXXXX'
+  searchAPPID = 'PXXXXXXXXXXJ'
+  showAuthor = true
+  authorName = 'Taosky'
+  authorDescription = ''
+  authorAvatar = '/images/logo.jpeg'
+  customCSS=true
+  googleAd=''ca-pub-xxxxxxxxxxxxxxxx
+
+[outputs]
+  home = [ "HTML","RSS"]
+  page = ["HTML"]
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+[markup.highlight]
+  style = 'dracula' # https://swapoff.org/chroma/playground
