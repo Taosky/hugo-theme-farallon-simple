@@ -652,6 +652,7 @@ textarea {
 }
 
 #fastSearch {
+    visibility: hidden;
     display: inline-block;
     position: absolute;
     z-index: 1;
