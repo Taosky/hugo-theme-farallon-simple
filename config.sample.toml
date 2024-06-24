@@ -43,7 +43,10 @@ theme = 'farallon'
   authorDescription = ''
   authorAvatar = '/images/logo.jpeg'
   customCSS=true
-  googleAd=''ca-pub-xxxxxxxxxxxxxxxx
+  # googleAd='ca-pub-xxxxxxxxxxxxxxxx'
+  post_like = true
+  post_view = true
+  actionDomain = 'https://v.wpista.com/'
 
 [outputs]
   home = [ "HTML","RSS"]
