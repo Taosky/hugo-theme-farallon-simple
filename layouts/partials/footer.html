@@ -11,7 +11,7 @@
             {{ with .Site.Params.copyright }}
             {{ . | markdownify }}
             {{ else }}
-            © {{ i18n "copyRight"}}
+            © 版权所有
             {{ now.Format "2006"}}
             {{ end }}
             <svg class="icon icon--copryrights" viewBox="0 0 1040 1024" width="16" height="16">
@@ -32,16 +32,16 @@
 </div>
 <script type="text/javascript">
     window.timeFormat = {
-        second: '{{ i18n "timeFormat.second" }}',
-        seconds: '{{ i18n "timeFormat.seconds" }}',
-        minute: '{{ i18n "timeFormat.minute" }}',
-        minutes: '{{ i18n "timeFormat.minutes" }}',
-        hour: '{{ i18n "timeFormat.hour" }}',
-        hours: '{{ i18n "timeFormat.hours" }}',
-        day: '{{ i18n "timeFormat.day" }}',
-        days: '{{ i18n "timeFormat.days" }}',
-        month: '{{ i18n "timeFormat.month" }}',
-        months: '{{ i18n "timeFormat.months" }}',
+        second: '秒前',
+        seconds: '秒前',
+        minute: '分钟前',
+        minutes: '分钟前',
+        hour: '小时前',
+        hours: '小时前',
+        day: '天前',
+        days: '天前',
+        month: '月前',
+        months: '月前',
     }
 </script>
 <script type="text/javascript">
@@ -64,11 +64,6 @@
 <script src="{{ $.Site.BaseURL }}{{ . }}"></script>
 {{ end }}
 {{ end }}
-
-
-<!-- <a id="search-btn" style="display: inline-block;" href="javascript:void(0);">
-    <span class="icon-search">捜</span>
-</a> -->
 
 <div id="fastSearch" class="replace-header">
     <input id="searchInput" tabindex="0" placeholder="Search here ...">

@@ -33,25 +33,13 @@
             {{ end }}
         </div>
         <h2 class="post--single__title">{{ .Title }}</h2>
-        {{ if .IsTranslated }}
-        <div class="translatedCard">
-            <h4>{{ i18n "translations" }}</h4>
-            <ul>
-                {{ range .Translations }}
-                <li>
-                    <a href="{{ .Permalink }}">{{ .Lang }}: {{ .Title }}{{ if .IsPage }}{{ end
-                        }}</a>
-                </li>
-                {{ end }}
-            </ul>
-        </div>
-        {{ end }}
+
         {{- $TOCEnabled := or .Params.toc (and .Site.Params.toc (ne .Params.toc false)) -}}
         {{- $hasTOC := gt (len .TableOfContents) 32 -}}
 
         {{ if and $TOCEnabled $hasTOC -}}
         <details class="toc" open>
-            <summary class="toc-title">{{ i18n "article.tableOfContents" }}</summary>
+            <summary class="toc-title">目录</summary>
             {{ .TableOfContents }}
         </details>
         {{- end }}

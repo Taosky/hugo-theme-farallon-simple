@@ -1,30 +1,27 @@
 baseURL = 'https://taosky.org'
 languageCode = 'zh-cn'
 timezone = 'Asia/Shanghai'
-defaultContentLanguage = 'zh-cn'
 theme = 'farallon'
 
+title = "Taosky 的博客"
+contentDir = 'content'
 
-[langusges]
-[languages.zh-cn]
-  title = "Taosky 的博客"
-  languageName = "简体中文"
-  contentDir = 'content/zh-cn'
-  [languages.zh-cn.menu]
-    [[languages.zh-cn.menu.main]]
-    name="标签"
-    url="/tags/"
-    weight="4"
-    [[languages.zh-cn.menu.main]]
-    name="看过"
-    url="/watch/"
-    weight="3"
-    [[languages.zh-cn.menu.main]]
-    name="文章"
-    url="/"
-    weight="1"
+[menu]
+  [[menu.main]]
+  name = "标签"
+  url = "/tags/"
+  weight = 4
 
-    
+  [[menu.main]]
+  name = "看过"
+  url = "/watch/"
+  weight = 3
+
+  [[menu.main]]
+  name = "文章"
+  url = "/"
+  weight = 1
+
 
 [taxonomies]
   category = 'categories'
