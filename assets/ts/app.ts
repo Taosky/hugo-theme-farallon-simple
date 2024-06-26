@@ -14,7 +14,7 @@ class farallonBase extends farallonHelper {
     is_single: boolean = false;
     post_id: number = 0;
     is_archive: boolean = false;
-    VERSION: string = "0.4.3";
+    VERSION: string = "0.4.4.1";
     like_btn: any;
     selctor: string = ".like-btn";
     actionDomain: string = window.actionDomain;
@@ -61,7 +61,7 @@ class farallonBase extends farallonHelper {
 
     initCopyright() {
         const copyright = `<div class="site--footer__info">
-        Theme <a href="https://fatesinger.com/101971" target="_blank">farallon</a> by bigfa / version ${this.VERSION}
+         Theme <a href="https://github.com/Taosky/hugo-theme-farallon-simple" target="_blank">farallon-simple</a> forked from <a href="https://fatesinger.com/101971" target="_blank">farallon by bigfa</a>  / version ${this.VERSION}
     </div>`;
 
         document
