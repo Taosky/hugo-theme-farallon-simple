@@ -5,6 +5,9 @@
     <div class="graph u-marginBottom30">
         {{ .Content }}
     </div>
+    {{ if .Params.comments }}
+        {{ partial "commentlist.html" . }}
+    {{ end }}
 </div>
 
 {{ end }}
