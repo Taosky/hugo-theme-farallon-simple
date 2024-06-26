@@ -13,39 +13,50 @@ contentDir = 'content'
   weight = 4
 
   [[menu.main]]
-  name = "看过"
-  url = "/watch/"
-  weight = 3
-
-  [[menu.main]]
   name = "文章"
   url = "/"
   weight = 1
-
 
 [taxonomies]
   category = 'categories'
   tag = 'tags'
 
 [Params]
-  search= true
-  description = '个人博客'
-  toc = true
+  # 基础设置
+  description = '个人博客，用于分享'
   mainSections = ['story','memo']
-  indexName = 'taosky'
   showAuthor = false
   authorName = 'Taosky'
   authorDescription = ''
-  authorAvatar = '/images/logo.jpeg'
+  ## 自行替换主题目录assets/layouts/下的logo.jpeg
+  authorAvatar = '/images/logo.jpeg' 
   customCSS=true
-  # googleAd='ca-pub-xxxxxxxxxxxxxxxx'
+  # 文章内目录
+  toc = true
+
+  # 谷歌Adsense, 按要求自行放置ads.txt
+  googleAd = 'ca-pub-00000000000000'
+  
+  # 底部社交链接
+  footer_sns = true
+  feed = '/index.xml'
+  # twitter = 'https://twitter.com/Taosky'
+  instagram = 'https://www.instagram.com/taoskycn/'
+  github = 'https://github.com/Taosky'
+  # telegram = 'https://t.me/s/Taosky'
+
+  # 文章点赞和浏览统计
   post_like = true
   post_view = true
+
+  # 不要修改
   actionDomain = 'https://v.wpista.com/'
-  giscusRepo = 'Taosky/taosky.github.io'
-  giscusRepoId = 'xxxxxxxxxxxxxxxxx='
+
+  # Giscus评论
+  giscusRepo = 'XXX/XXXX'
+  giscusRepoId = 'XXXXXXXXXXXXXXXXXX'
   giscusCategory = 'Announcements'
-  giscusCategoryId = 'DIC_xxxxxxxxxx'
+  giscusCategoryId = 'DIC_xxxxxxxxx'
 
 [outputs]
   home = [ "HTML","RSS","JSON"]
@@ -56,4 +67,4 @@ contentDir = 'content'
     [markup.goldmark.renderer]
       unsafe = true
 [markup.highlight]
-  style = 'dracula' # https://swapoff.org/chroma/playground
+  style = 'dracula'  # https://swapoff.org/chroma/playground
