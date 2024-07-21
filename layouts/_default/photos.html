@@ -155,7 +155,7 @@
     document.addEventListener('DOMContentLoaded', () => {
         imgStatus.watch('.photo-img', function (imgs) {
             if (imgs.isDone()) {
-                waterfall('.gallery-photos');
+                // waterfall('.gallery-photos');
                 let pagePhoto = document.querySelectorAll('.gallery-photo');
                 for (var i = 0; i < pagePhoto.length; i++) { pagePhoto[i].className += " visible" };
             }
