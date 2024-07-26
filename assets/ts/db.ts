@@ -40,8 +40,7 @@ class Douban {
         this.types = config.types ?? [
             "movie",
             "book",
-            "music",
-            "game",
+
             "drama",
         ];
         this.baseAPI = config.baseAPI;
@@ -96,9 +95,8 @@ class Douban {
     _reanderTypes(): void {
         document.querySelector(".db--nav")!.innerHTML = this.types
             .map((item: string) => {
-                return `<span class="db--navItem JiEun${
-                    this.type == item ? " current" : ""
-                }" data-type="${item}">${item}</span>`;
+                return `<span class="db--navItem JiEun${this.type == item ? " current" : ""
+                    }" data-type="${item}">${item}</span>`;
             })
             .join("");
         this._handleNavClick();
@@ -107,9 +105,8 @@ class Douban {
     _renderGenre(): void {
         document.querySelector(".db--genres")!.innerHTML = this.genre_list
             .map((item: StatusObject) => {
-                return `<span class="db--genreItem${
-                    this.status == item.value ? " is-active" : ""
-                }" data-status="${item.value}">${item.name}</span>`;
+                return `<span class="db--genreItem${this.status == item.value ? " is-active" : ""
+                    }" data-status="${item.value}">${item.name}</span>`;
             })
             .join("");
         this._handleGenreClick();
@@ -124,7 +121,7 @@ class Douban {
         fetch(this.baseAPI + "list?" + params.toString())
             .then((response) => response.json())
             .then((t: any) => {
-                console.log(t.results);
+                // console.log(t.results);
                 if (t.results.length) {
                     if (
                         document
@@ -169,20 +166,29 @@ class Douban {
             html += `<div class="db--listBydate"><div class="db--titleDate"><div class="db--titleDate__day">${date[1]}</div><div class="db--titleDate__month">${date[0]}</div></div><div class="db--dateList__card">`;
             html += result[key]
                 .map((movie: any) => {
-                    return `<div class="db--item${
-                        this.type == "music" ? " db--item__music" : ""
-                    }"><img src="${
-                        movie.poster
-                    }" referrerpolicy="no-referrer" class="db--image"><div class="db--score ">${
-                        movie.douban_score > 0
+                    return `<div>
+                    ${movie.comment ? '<div style="line-height: 24px;"><span style="font-size:25px;">“ </span><span>' + movie.comment + '</span><span style="font-size:25px"> ”</span></div>' : '<div</div>'}
+                    <div class="doulist-item" style="width: 600px; max-width: 90vw; margin-top: 0px; margin-bottom: 40px;">
+                    <div class="doulist-subject"><div class="doulist-post">
+                    <img decoding="async" referrerpolicy="no-referrer" src="${movie.poster
+                        }">
+                    </div>
+                    <div class="doulist-content">
+                    <div class="doulist-title">
+                    <a style="color: #808080;" href="${movie.link}" class="cute" target="_blank" rel="external nofollow">${movie.name}</a>
+                    </div><div class="rating"><span class="allstardark"><span class="allstarlight" style="width:88%"></span></span>
+                    <span class="rating_nums">${movie.douban_score}</span>
+                    </div>
+                    <div class="abstract">${movie.card_subtitle}</div></div></div></div></div>`
+                    return `<div class="db--item${this.type == "music" ? " db--item__music" : ""
+                        }"><img src="${movie.poster
+                        }" referrerpolicy="no-referrer" class="db--image"><div class="db--score ">${movie.douban_score > 0
                             ? '<svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" ><path d="M12 20.1l5.82 3.682c1.066.675 2.37-.322 2.09-1.584l-1.543-6.926 5.146-4.667c.94-.85.435-2.465-.799-2.567l-6.773-.602L13.29.89a1.38 1.38 0 0 0-2.581 0l-2.65 6.53-6.774.602C.052 8.126-.453 9.74.486 10.59l5.147 4.666-1.542 6.926c-.28 1.262 1.023 2.26 2.09 1.585L12 20.099z"></path></svg>' +
-                              movie.douban_score
+                            movie.douban_score
                             : ""
-                    }${
-                        movie.year > 0 ? " · " + movie.year : ""
-                    }</div><div class="db--title"><a href="${
-                        movie.link
-                    }" target="_blank">${movie.name}</a></div></div>`;
+                        }${movie.year > 0 ? " · " + movie.year : ""
+                        }</div><div class="db--title"><a href="${movie.link
+                        }" target="_blank">${movie.name}</a></div></div>`;
                 })
                 .join("");
             html += `</div></div>`;
@@ -193,20 +199,15 @@ class Douban {
     _randerListTemplate(): void {
         document.querySelector(".db--list")!.innerHTML = this.subjects
             .map((item) => {
-                return `<div class="db--item"><img src="${
-                    item.poster
-                }" referrerpolicy="no-referrer" class="db--image"><div class="ipc-signpost ">${
-                    item.create_time
-                }</div><div class="db--score ">${
-                    item.douban_score
+                return `<div class="db--item"><img src="${item.poster
+                    }" referrerpolicy="no-referrer" class="db--image"><div class="ipc-signpost ">${item.create_time
+                    }</div><div class="db--score ">${item.douban_score
                         ? '<svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" ><path d="M12 20.1l5.82 3.682c1.066.675 2.37-.322 2.09-1.584l-1.543-6.926 5.146-4.667c.94-.85.435-2.465-.799-2.567l-6.773-.602L13.29.89a1.38 1.38 0 0 0-2.581 0l-2.65 6.53-6.774.602C.052 8.126-.453 9.74.486 10.59l5.147 4.666-1.542 6.926c-.28 1.262 1.023 2.26 2.09 1.585L12 20.099z"></path></svg>' +
-                          item.douban_score
+                        item.douban_score
                         : ""
-                }${
-                    item.year ? " · " + item.year : ""
-                }</div><div class="db--title"><a href="${
-                    item.link
-                }" target="_blank">${item.name}</a></div>
+                    }${item.year ? " · " + item.year : ""
+                    }</div><div class="db--title"><a href="${item.link
+                    }" target="_blank">${item.name}</a></div>
                 </div>
                 </div>`;
             })
@@ -317,12 +318,12 @@ class Douban {
         const type = item.dataset.style ? item.dataset.style : "card";
         fetch(
             this.baseAPI +
-                "/list?type=" +
-                item.dataset.type +
-                "&paged=1&start_time=" +
-                item.dataset.start +
-                "&end_time=" +
-                item.dataset.end
+            "/list?type=" +
+            item.dataset.type +
+            "&paged=1&start_time=" +
+            item.dataset.start +
+            "&end_time=" +
+            item.dataset.end
         )
             .then((response) => response.json())
             .then((t: any) => {
@@ -359,18 +360,14 @@ class Douban {
                             html += result[key]
                                 .map((movie: any) => {
                                     return `<div class="db--card__list"">
-                                    <img referrerpolicy="no-referrer" src="${
-                                        movie.poster
-                                    }">
+                                    <img referrerpolicy="no-referrer" src="${movie.poster
+                                        }">
                                     <div>
-                                    <div class="title"><a href="${
-                                        movie.link
-                                    }" class="cute" target="_blank" rel="external nofollow">${
-                                        movie.name
-                                    }</a></div>
-                                    <div class="rating"><span class="allstardark"><span class="allstarlight" style="width:75%"></span></span><span class="rating_nums">${
-                                        movie.douban_score
-                                    }</span></div>
+                                    <div class="title"><a href="${movie.link
+                                        }" class="cute" target="_blank" rel="external nofollow">${movie.name
+                                        }</a></div>
+                                    <div class="rating"><span class="allstardark"><span class="allstarlight" style="width:75%"></span></span><span class="rating_nums">${movie.douban_score
+                                        }</span></div>
                                     ${movie.remark || movie.card_subtitle}
                                     </div>
                                     </div>`;
