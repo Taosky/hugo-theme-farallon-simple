@@ -92,25 +92,5 @@
     {{ if (findRE "<code" .Content 1) }}
     <script src="{{"/js/clipboard.js" | relURL}}"></script>
     {{ end }}
-    <!-- {{ if or .PrevPage .NextPage }}
-    <nav class="navigation post-navigation is-active">
-        <div class="nav-links">
-            {{ if .PrevPage }}
-            <div class="nav-previous">
-                <a class="link-reverse" href="{{ .PrevPage.Permalink }}?ref=footer">
-                    <span class="meta-nav">Previous</span><span class="post-title">{{ .PrevPage.Title }}</span>
-                </a>
-            </div>
-            {{ end }}
-            {{ if .NextPage }}
-            <div class="nav-next">
-                <a class="link-reverse" href="{{ .NextPage.Permalink }}?ref=footer">
-                    <span class="meta-nav">Next</span><span class="post-title">{{ .NextPage.Title }}</span>
-                </a>
-            </div>
-            {{ end }}
-        </div>
-    </nav>
-    {{ end }} -->
 </main>
 {{ end }}
