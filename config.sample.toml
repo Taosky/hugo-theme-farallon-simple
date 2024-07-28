@@ -6,55 +6,73 @@ theme = 'farallon'
 title = "Taosky 的博客"
 contentDir = 'content'
 
+# 菜单栏
 [menu]
-  [[menu.main]]
-  name = "标签"
-  url = "/tags/"
-  weight = 4
-
   [[menu.main]]
   name = "文章"
   url = "/"
   weight = 1
+
+  [[menu.main]]
+  name = "相册"
+  url = "/photos"
+  weight = 2
+
+  [[menu.main]]
+  name = "看过"
+  url = "/watch"
+  weight = 3
+  
+  [[menu.main]]
+  name = "友链"
+  url = "/friends"
+  weight = 4
+  
+  [[menu.main]]
+  name = "关于 "
+  url = "/about"
+  weight = 5
 
 [taxonomies]
   category = 'categories'
   tag = 'tags'
 
 [Params]
-  # 基础设置
   description = '个人博客，用于分享'
   mainSections = ['story','memo']
   showAuthor = false
   authorName = 'Taosky'
   authorDescription = ''
-  ## 自行替换主题目录assets/layouts/下的logo.jpeg
-  authorAvatar = '/images/logo.jpeg' 
-  customCSS=true
+
+  # 替换主题目录assets/下的logo.jpeg
+  authorAvatar = '/logo.jpeg' 
   # 文章内目录
   toc = true
 
-  # 谷歌Adsense, 按要求自行放置ads.txt
-  googleAd = 'ca-pub-00000000000000'
+  # 谷歌Adsense
+  googleAd = 'ca-pub-000000000'
   
   # 底部社交链接
   footer_sns = true
   feed = '/index.xml'
-  # twitter = 'https://twitter.com/Taosky'
+  # twitter = 'https://twitter.com/fatesinger'
   instagram = 'https://www.instagram.com/taoskycn/'
   github = 'https://github.com/Taosky'
-  # telegram = 'https://t.me/s/Taosky'
+  # telegram = 'https://t.me/s/fatesinger'
 
   # 文章点赞和浏览统计
   post_like = true
   post_view = true
 
-  # 不要修改
+  # 点赞和浏览量API
   actionDomain = 'https://v.wpista.com/'
 
+  # 看过页面API (需自建 https://github.com/taosky/douban)
+  # dbAPIBase = 'https://watch.8610000.xyz/'
+
   # Giscus评论
-  giscusRepo = 'XXX/XXXX'
-  giscusRepoId = 'XXXXXXXXXXXXXXXXXX'
+  giscusRepo = Your/Repo'
+  giscusRepoId = 'XXXXXXXXXX'
   giscusCategory = 'Announcements'
   giscusCategoryId = 'DIC_xxxxxxxxx'
 
