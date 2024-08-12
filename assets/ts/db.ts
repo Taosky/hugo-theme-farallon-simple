@@ -176,7 +176,7 @@ class Douban {
                     <div class="doulist-content">
                     <div class="doulist-title">
                     <a style="color: #808080;" href="${movie.link}" class="cute" target="_blank" rel="external nofollow">${movie.name}</a>
-                    </div><div class="rating"><span class="allstardark"><span class="allstarlight" style="width:88%"></span></span>
+                    </div><div class="rating"><span class="allstardark"><span class="allstarlight" style="width:${movie.douban_score / 10 * 100}%"></span></span>
                     <span class="rating_nums">${movie.douban_score}</span>
                     </div>
                     <div class="abstract">${movie.card_subtitle}</div></div></div></div></div>`
