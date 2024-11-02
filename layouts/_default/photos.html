@@ -15,7 +15,9 @@
         {{ $alt := printf "/photos/%s" .Name }}
         {{ with resources.Get (printf "photos/%s" .Name) }}
         {{ with .Resize "300x webp q85 lanczos" }}
+        {{ with .Crop "300x300" }}
         <img class="photo-img" loading='lazy' decoding="async" src="{{ .RelPermalink }}" href="{{ $img.RelPermalink }}" alt="{{ $alt }}" />
+        {{ end }}
         {{ end }}
         {{ end }}
         <span class="photo-title">{{ .Name | replaceRE "^[0-9 -]+(.*)[.].*" "$1"}}</span><span class="photo-time">{{
